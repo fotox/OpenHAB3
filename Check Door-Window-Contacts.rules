@@ -1,9 +1,9 @@
-var Number count = 0
-
 rule "Check Contacts"
 when
     Member of Group contacts changed
 then
+    var Number count = 0
+    
     if (Fenster_1.state.toString == "OPEN") {
       Alexa_TTS.sendCommand("Fenster 1")
       count = count + 1
