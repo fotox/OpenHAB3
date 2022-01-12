@@ -1,8 +1,8 @@
 # OpenHAB3 Rules
-- [x] Check door-window-contacts
-- [x] Alexa say hello and goodbye
-- [x] Change winddirection
-- [x] Alexa how is the temperature
-- [x] Next day activities
-- [x] Alarm system over Telegram
-- [x] Switching of a boiler by photovolataik surplus
+- [x] Check Door-Window-Contacts
+- [x] Change Winddirection
+- [ ] Alexa say hello and goodbye
+- [ ] Alexa how is the temperature
+- [ ] Next day activities
+- [ ] Alarm system over Telegram
+- [ ] Switching of a boiler by photovolataik surplus
