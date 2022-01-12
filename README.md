@@ -1,1 +1,1 @@
-# OpenHAB3-Rules
+# OpenHAB3 Rules
