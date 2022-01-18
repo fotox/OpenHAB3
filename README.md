@@ -4,7 +4,7 @@
 - [x] Alarm system over Telegram
 - [x] Alexa say hello and goodbye
 - [x] Next day activities
-- [ ] Alexa how is the temperature
+- [x] Alexa get the temperature
 - [ ] Switching of a boiler by photovolataik surplus
 
 ## Informations for Alexa TTS
@@ -35,4 +35,7 @@ OpenHAB3 uses the [iCalendar Binding](https://www.openhab.org/addons/bindings/ic
 
 The rule checks now if it is someone's birthday today, if the garbage will be picked up tomorrow and if there are public holidays tomorrow. The rule can return this information to the user at a specific time (by triggering the switch "whats_up_today") and saves you searching through multiple calendars.
 
-Translated with www.DeepL.com/Translator (free version)
+## Alexa get the temperature
+The rule is activated by a voice input via Alexa. A new rule has been created in the Alexa app that sets a logical number to one, for example, when the voice command "Alexa, give me the temperature of the kitchen" is given.  This is set up as an item in OpenHAB3 and activates the rule after the number has been changed.
+
+After the rule has been run, the switch is reset to zero and the rule ends after the second run.
