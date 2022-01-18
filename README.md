@@ -2,17 +2,18 @@
 - [x] Check Door-Window-Contacts
 - [x] Change Winddirection
 - [x] Alarm system over Telegram
-- [ ] Alexa say hello and goodbye
+- [x] Alexa say hello and goodbye
+- [x] Next day activities
 - [ ] Alexa how is the temperature
-- [ ] Next day activities
 - [ ] Switching of a boiler by photovolataik surplus
+
+## Informations for Alexa TTS
+Before starting the control, the [Alexa Binding](https://www.openhab.org/addons/bindings/amazonechocontrol/) must be installed and the thing **amazon account** must be added to the OpenHAB3. After that the inbox shows the found alexa devices. In this rule, the thing-item-binding of an alexa device, here marked as **Alexa_TTS** and a dynamic string-item, here marked as **CheckContactOutput**, is also required.
 
 ## File extension
 The files were written in "pseudo java code", OpenHAB3 calls these files "rules". To use them in your own OpenHAB3 just change the extension .java to .rules.
 
 ## Check Door-Window-Contacts
-Before starting the control, the [Alexa Binding](https://www.openhab.org/addons/bindings/amazonechocontrol/) must be installed and the thing **amazon account** must be added to the OpenHAB3. After that the inbox shows the found alexa devices. In this rule, the thing-item-binding of an alexa device, here marked as **Alexa_TTS** and a dynamic string-item, here marked as **CheckContactOutput**, is also required.
-
 The rule first accesses the group of contacts and checks whether a member of this group has the status **OPEN**. If at least 1 contact has the status **OPEN**, the specified Alexa reports which contacts are open. In addition, a message with **Not everything is closed** appears in the Smart Home GUI.
 
 ## Alarm system over Telegram
@@ -25,3 +26,13 @@ For the reply logic, two items must also be created via the **telegram bot** thi
 The rule grabs all the lights in the apartment at startup and asks if any lights that are still on should be turned off. It then checks if all windows and doors are closed. If any lights are on, the chatbot asks if all remaining lights should be turned off. Open windows and doors are automatically reported and the alarm system is deactivated again. If a motion detector is triggered or a door or window contact is triggered when the alarm system is active, the alarm system automatically sends a message to the owner. 
 
 When the alarm system is deactivated, it also asks if all lights in the living area should be switched on to automatically create a coming home atmosphere.
+
+## Alexa say hello and goodbye
+The rule checks whether the contact of the entrance door is triggered. If the motion detector in the hallway is not triggered, it is assumed that a person enters the house. Otherwise, the person will be said goodbye when leaving.
+
+## Next day activities
+OpenHAB3 uses the [iCalendar Binding](https://www.openhab.org/addons/bindings/icalendar/) to access the Google integrated garbage calendar, birthday calendar, holiday calendar and appointment calendar and mirrors them to OpenHAB3.
+
+The rule checks now if it is someone's birthday today, if the garbage will be picked up tomorrow and if there are public holidays tomorrow. The rule can return this information to the user at a specific time (by triggering the switch "whats_up_today") and saves you searching through multiple calendars.
+
+Translated with www.DeepL.com/Translator (free version)
